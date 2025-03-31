@@ -1,4 +1,4 @@
-
+import numpy as np
 
 class MotionModel:
 
@@ -32,8 +32,26 @@ class MotionModel:
         """
 
         ####################################
-        # TODO
 
-        raise NotImplementedError
+        dx = odometry[0]
+        dy = odometry[1]
+        dtheta = odometry[2]
 
-        ####################################
+        alpha_1 = 0
+        alpha_2 = 0
+        alpha_3 = 0
+        alpha_4 = 0
+
+        delta_rot_1 = np.arctan2(dy, dx)
+        delta_trans = np.sqrt(dx**2 + dy**2)
+        delta_rot_2 = dtheta - delta_rot_1
+
+        delta_rot_1_hat = delta_rot_1 + np.random.normal(0, np.sqrt(np.abs(alpha_1*delta_rot_1 + alpha_2*delta_trans)))
+        delta_trans_hat = delta_trans + np.random.normal(0, np.sqrt(np.abs(alpha_3*delta_trans + alpha_4*(delta_rot_1 + delta_rot_2))))
+        delta_rot_2_hat = delta_rot_2 + np.random.normal(0, np.sqrt(np.abs(alpha_1 * delta_rot_2 + alpha_2*delta_trans)))
+
+        particles[:,0] += delta_trans_hat*np.cos(particles[:, 2]+ delta_rot_1_hat)
+        particles[:, 1] += delta_trans_hat*np.sin(particles[:, 2]+ delta_rot_1_hat)
+        particles[:, 2] += delta_rot_1_hat + delta_rot_2_hat
+
+        return particles
