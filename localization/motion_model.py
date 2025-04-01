@@ -3,14 +3,7 @@ import numpy as np
 class MotionModel:
 
     def __init__(self, node):
-        ####################################
-        # TODO
-        # Do any precomputation for the motion
-        # model here.
-
         pass
-
-        ####################################
 
     def evaluate(self, particles, odometry):
         """
@@ -37,10 +30,10 @@ class MotionModel:
         dy = odometry[1]
         dtheta = odometry[2]
 
-        alpha_1 = 0
-        alpha_2 = 0
-        alpha_3 = 0
-        alpha_4 = 0
+        alpha_1 = 0.07
+        alpha_2 = 0.07
+        alpha_3 = 0.07
+        alpha_4 = 0.07
 
         delta_rot_1 = np.arctan2(dy, dx)
         delta_trans = np.sqrt(dx**2 + dy**2)
