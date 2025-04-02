@@ -102,16 +102,31 @@ class ParticleFilter(Node):
         self.publish_average_pose()
 
     def odom_callback(self, msg):
-
+            
         if self.particles is None:
             return
-        dx = msg.twist.twist.linear.x
-        dy = msg.twist.twist.linear.y
-        dtheta = msg.twist.twist.angular.z
 
+        # Get the current time.
+        current_time = self.get_clock().now()
+        
+        # If this is the first odom callback then just record time and exit.
+        if not hasattr(self, "last_odom_time"):
+            self.last_odom_time = current_time
+            return
+
+        # Compute the time difference (dt) in seconds.
+        dt = (current_time - self.last_odom_time).nanoseconds * 1e-9
+        self.last_odom_time = current_time
+
+        # Multiply the linear and angular velocities by dt.
+        dx = msg.twist.twist.linear.x * dt
+        dy = msg.twist.twist.linear.y * dt
+        dtheta = msg.twist.twist.angular.z * dt
+        
+        # Form the odometry delta vector.
         odometry = np.array([dx, dy, dtheta])
         self.particles = self.motion_model.evaluate(self.particles, odometry)
-
+        
         self.publish_average_pose()
 
     def laser_callback(self, msg):
