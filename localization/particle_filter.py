@@ -1,3 +1,5 @@
+# particle_filter.py
+
 import numpy as np
 
 import rclpy
@@ -6,6 +8,7 @@ from rclpy.node import Node
 from nav_msgs.msg import Odometry
 from sensor_msgs.msg import LaserScan
 from geometry_msgs.msg import PoseWithCovarianceStamped, Quaternion
+from visualization_msgs.msg import Marker, MarkerArray
 
 from localization.sensor_model import SensorModel
 from localization.motion_model import MotionModel
@@ -13,6 +16,9 @@ from localization.motion_model import MotionModel
 from tf_transformations import quaternion_from_euler, euler_from_quaternion
 import math
 
+
+VAR_POS = 0.25
+VAR_ANGLE = 0.05
 
 class ParticleFilter(Node):
 
@@ -59,7 +65,13 @@ class ParticleFilter(Node):
             "/initialpose",
             self.pose_callback,
             1)
-
+        #        self.marker_pub = self.create_publisher(MarkerArray, "/particle_markers", 1)
+        self.marker_pub = self.create_publisher(
+            MarkerArray,
+            "/particle_markers",
+            qos_profile=rclpy.qos.QoSProfile(depth=10, durability=rclpy.qos.DurabilityPolicy.TRANSIENT_LOCAL)
+        )
+        
         #  *Important Note #3:* You must publish your pose estimate to
         #     the following topic. In particular, you must use the
         #     pose field of the Odometry message. You do not need to
@@ -95,11 +107,12 @@ class ParticleFilter(Node):
         theta_0 = euler_from_quaternion([q.x, q.y, q.z, q.w])[2]
 
         self.particles = np.empty((self.num_particles, 3))
-        self.particles[:, 0] = np.random.normal(x_0, 0.5, self.num_particles)
-        self.particles[:, 1] = np.random.normal(y_0, 0.5, self.num_particles)
-        self.particles[:, 2] = np.random.normal(theta_0, 0.1, self.num_particles)
+        self.particles[:, 0] = np.random.normal(x_0, VAR_POS, self.num_particles)
+        self.particles[:, 1] = np.random.normal(y_0, VAR_POS, self.num_particles)
+        self.particles[:, 2] = np.random.normal(theta_0, VAR_ANGLE, self.num_particles)
 
         self.publish_average_pose()
+        self.publish_particle_markers()
 
     def odom_callback(self, msg):
             
@@ -127,6 +140,7 @@ class ParticleFilter(Node):
         odometry = np.array([dx, dy, dtheta])
         self.particles = self.motion_model.evaluate(self.particles, odometry)
         
+        self.publish_particle_markers()
         self.publish_average_pose()
 
     def laser_callback(self, msg):
@@ -145,14 +159,25 @@ class ParticleFilter(Node):
             probs = np.ones(len(probs)) / len(probs)
         else:
             probs = probs / prob_sum
-
+            
         idxs = np.random.choice(
             np.arange(len(self.particles)),
             size=len(self.particles),
             replace=True,
             p=probs)
+
+        noise = np.column_stack((
+            np.random.normal(0, VAR_POS, self.num_particles),
+            np.random.normal(0, VAR_POS, self.num_particles),
+            np.random.normal(0, VAR_ANGLE, self.num_particles)
+        ))
+        self.particles += noise
         self.particles = self.particles[idxs]
+
+        
         self.publish_average_pose()
+        self.publish_particle_markers()
+                
 
     def publish_average_pose(self):
 
@@ -181,6 +206,35 @@ class ParticleFilter(Node):
         )
 
         self.odom_pub.publish(odom_msg)
+
+    def publish_particle_markers(self):
+        marker_array = MarkerArray()
+        current_time = self.get_clock().now().to_msg()
+        for i, particle in enumerate(self.particles):
+            marker = Marker()
+            marker.header.stamp = current_time
+            marker.header.frame_id = "map"
+            marker.ns = "particles"
+            marker.id = i
+            marker.type = Marker.SPHERE
+            marker.action = Marker.ADD
+            marker.pose.position.x = particle[0]
+            marker.pose.position.y = particle[1]
+            marker.pose.position.z = 0.0
+            marker.pose.orientation.x = 0.0
+            marker.pose.orientation.y = 0.0
+            marker.pose.orientation.z = 0.0
+            marker.pose.orientation.w = 1.0
+            marker.scale.x = 0.1
+            marker.scale.y = 0.1
+            marker.scale.z = 0.1
+            marker.color.a = 0.8
+            marker.color.r = 1.0
+            marker.color.g = 0.0
+            marker.color.b = 0.0
+            marker_array.markers.append(marker)
+        self.marker_pub.publish(marker_array)
+
 
 def main(args=None):
     rclpy.init(args=args)
