@@ -17,8 +17,8 @@ from tf_transformations import quaternion_from_euler, euler_from_quaternion
 import math
 
 
-VAR_POS = 0.25
-VAR_ANGLE = 0.05
+VAR_POS = 0.4
+VAR_ANGLE = 0.2
 
 class ParticleFilter(Node):
 
@@ -166,12 +166,6 @@ class ParticleFilter(Node):
             replace=True,
             p=probs)
 
-        noise = np.column_stack((
-            np.random.normal(0, VAR_POS, self.num_particles),
-            np.random.normal(0, VAR_POS, self.num_particles),
-            np.random.normal(0, VAR_ANGLE, self.num_particles)
-        ))
-        self.particles += noise
         self.particles = self.particles[idxs]
 
         
