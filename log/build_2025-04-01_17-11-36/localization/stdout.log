@@ -1,0 +1,75 @@
+[39mrunning egg_info[0m
+[39mcreating build/localization/localization.egg-info[0m
+[39mwriting build/localization/localization.egg-info/PKG-INFO[0m
+[39mwriting dependency_links to build/localization/localization.egg-info/dependency_links.txt[0m
+[39mwriting entry points to build/localization/localization.egg-info/entry_points.txt[0m
+[39mwriting requirements to build/localization/localization.egg-info/requires.txt[0m
+[39mwriting top-level names to build/localization/localization.egg-info/top_level.txt[0m
+[39mwriting manifest file 'build/localization/localization.egg-info/SOURCES.txt'[0m
+[39mreading manifest file 'build/localization/localization.egg-info/SOURCES.txt'[0m
+[39mwriting manifest file 'build/localization/localization.egg-info/SOURCES.txt'[0m
+[39mrunning build[0m
+[39mrunning build_py[0m
+[39mcreating /home/racecar/racecar_ws/src/localization/build/localization/build[0m
+[39mcreating /home/racecar/racecar_ws/src/localization/build/localization/build/lib.linux-x86_64-3.10[0m
+[39mcreating /home/racecar/racecar_ws/src/localization/build/localization/build/lib.linux-x86_64-3.10/localization[0m
+[39mcopying localization/motion_model.py -> /home/racecar/racecar_ws/src/localization/build/localization/build/lib.linux-x86_64-3.10/localization[0m
+[39mcopying localization/particle_filter.py -> /home/racecar/racecar_ws/src/localization/build/localization/build/lib.linux-x86_64-3.10/localization[0m
+[39mcopying localization/sensor_model.py -> /home/racecar/racecar_ws/src/localization/build/localization/build/lib.linux-x86_64-3.10/localization[0m
+[39mcopying localization/__init__.py -> /home/racecar/racecar_ws/src/localization/build/localization/build/lib.linux-x86_64-3.10/localization[0m
+[39mcreating /home/racecar/racecar_ws/src/localization/build/localization/build/lib.linux-x86_64-3.10/localization/test[0m
+[39mcopying localization/test/motion_model_test.py -> /home/racecar/racecar_ws/src/localization/build/localization/build/lib.linux-x86_64-3.10/localization/test[0m
+[39mcopying localization/test/sensor_model_test.py -> /home/racecar/racecar_ws/src/localization/build/localization/build/lib.linux-x86_64-3.10/localization/test[0m
+[39mcopying localization/test/__init__.py -> /home/racecar/racecar_ws/src/localization/build/localization/build/lib.linux-x86_64-3.10/localization/test[0m
+[39mrunning build_ext[0m
+[39mbuilding 'scan_simulator_2d' extension[0m
+[39mC compiler: x86_64-linux-gnu-gcc -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O2 -Wall -g -fstack-protector-strong -Wformat -Werror=format-security -g -fwrapv -O2 -g -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC
+[0m
+[39mcreating /home/racecar/racecar_ws/src/localization/build/localization/build/temp.linux-x86_64-3.10[0m
+[39mcreating /home/racecar/racecar_ws/src/localization/build/localization/build/temp.linux-x86_64-3.10/localization[0m
+[39mcompile options: '-I/home/sim_ws/install/racecar_simulator/include -I/home/racecar/racecar_ws/src/localization/install/localization/include -I/usr/include/python3.10 -c'
+extra options: '-Wno-cpp -g -Wno-maybe-uninitialized'[0m
+[39mx86_64-linux-gnu-gcc: localization/scan_simulator_2d.cpp[0m
+[39mx86_64-linux-gnu-g++ -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -g -fwrapv -O2 -Wl,-Bsymbolic-functions -g -fwrapv -O2 -g -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 /home/racecar/racecar_ws/src/localization/build/localization/build/temp.linux-x86_64-3.10/localization/scan_simulator_2d.o -L/home/sim_ws/install/racecar_simulator/lib -lracecar_simulator -o /home/racecar/racecar_ws/src/localization/build/localization/build/lib.linux-x86_64-3.10/scan_simulator_2d.cpython-310-x86_64-linux-gnu.so[0m
+[39mrunning install[0m
+[39mrunning install_lib[0m
+[39mcreating /home/racecar/racecar_ws/src/localization/install/localization/lib/python3.10/site-packages/localization[0m
+[39mcopying /home/racecar/racecar_ws/src/localization/build/localization/build/lib.linux-x86_64-3.10/localization/motion_model.py -> /home/racecar/racecar_ws/src/localization/install/localization/lib/python3.10/site-packages/localization[0m
+[39mcopying /home/racecar/racecar_ws/src/localization/build/localization/build/lib.linux-x86_64-3.10/localization/particle_filter.py -> /home/racecar/racecar_ws/src/localization/install/localization/lib/python3.10/site-packages/localization[0m
+[39mcopying /home/racecar/racecar_ws/src/localization/build/localization/build/lib.linux-x86_64-3.10/localization/sensor_model.py -> /home/racecar/racecar_ws/src/localization/install/localization/lib/python3.10/site-packages/localization[0m
+[39mcreating /home/racecar/racecar_ws/src/localization/install/localization/lib/python3.10/site-packages/localization/test[0m
+[39mcopying /home/racecar/racecar_ws/src/localization/build/localization/build/lib.linux-x86_64-3.10/localization/test/motion_model_test.py -> /home/racecar/racecar_ws/src/localization/install/localization/lib/python3.10/site-packages/localization/test[0m
+[39mcopying /home/racecar/racecar_ws/src/localization/build/localization/build/lib.linux-x86_64-3.10/localization/test/sensor_model_test.py -> /home/racecar/racecar_ws/src/localization/install/localization/lib/python3.10/site-packages/localization/test[0m
+[39mcopying /home/racecar/racecar_ws/src/localization/build/localization/build/lib.linux-x86_64-3.10/localization/test/__init__.py -> /home/racecar/racecar_ws/src/localization/install/localization/lib/python3.10/site-packages/localization/test[0m
+[39mcopying /home/racecar/racecar_ws/src/localization/build/localization/build/lib.linux-x86_64-3.10/localization/__init__.py -> /home/racecar/racecar_ws/src/localization/install/localization/lib/python3.10/site-packages/localization[0m
+[39mcopying /home/racecar/racecar_ws/src/localization/build/localization/build/lib.linux-x86_64-3.10/scan_simulator_2d.cpython-310-x86_64-linux-gnu.so -> /home/racecar/racecar_ws/src/localization/install/localization/lib/python3.10/site-packages[0m
+[39mbyte-compiling /home/racecar/racecar_ws/src/localization/install/localization/lib/python3.10/site-packages/localization/motion_model.py to motion_model.cpython-310.pyc[0m
+[39mbyte-compiling /home/racecar/racecar_ws/src/localization/install/localization/lib/python3.10/site-packages/localization/particle_filter.py to particle_filter.cpython-310.pyc[0m
+[39mbyte-compiling /home/racecar/racecar_ws/src/localization/install/localization/lib/python3.10/site-packages/localization/sensor_model.py to sensor_model.cpython-310.pyc[0m
+[39mbyte-compiling /home/racecar/racecar_ws/src/localization/install/localization/lib/python3.10/site-packages/localization/test/motion_model_test.py to motion_model_test.cpython-310.pyc[0m
+[39mbyte-compiling /home/racecar/racecar_ws/src/localization/install/localization/lib/python3.10/site-packages/localization/test/sensor_model_test.py to sensor_model_test.cpython-310.pyc[0m
+[39mbyte-compiling /home/racecar/racecar_ws/src/localization/install/localization/lib/python3.10/site-packages/localization/test/__init__.py to __init__.cpython-310.pyc[0m
+[39mbyte-compiling /home/racecar/racecar_ws/src/localization/install/localization/lib/python3.10/site-packages/localization/__init__.py to __init__.cpython-310.pyc[0m
+[39mrunning install_data[0m
+[39mcreating /home/racecar/racecar_ws/src/localization/install/localization/share/ament_index[0m
+[39mcreating /home/racecar/racecar_ws/src/localization/install/localization/share/ament_index/resource_index[0m
+[39mcreating /home/racecar/racecar_ws/src/localization/install/localization/share/ament_index/resource_index/packages[0m
+[39mcopying resource/localization -> /home/racecar/racecar_ws/src/localization/install/localization/share/ament_index/resource_index/packages[0m
+[39mcopying package.xml -> /home/racecar/racecar_ws/src/localization/install/localization/share/localization[0m
+[39mcopying localization/params.yaml -> /home/racecar/racecar_ws/src/localization/install/localization/share/localization[0m
+[39mcopying localization/test/test_params.yaml -> /home/racecar/racecar_ws/src/localization/install/localization/share/localization[0m
+[39mcreating /home/racecar/racecar_ws/src/localization/install/localization/share/localization/launch[0m
+[39mcopying launch/localize.launch.xml -> /home/racecar/racecar_ws/src/localization/install/localization/share/localization/launch[0m
+[39mcopying launch/unit_tests/motion_model_test.launch.py -> /home/racecar/racecar_ws/src/localization/install/localization/share/localization/launch[0m
+[39mcopying launch/unit_tests/sensor_model_test.launch.py -> /home/racecar/racecar_ws/src/localization/install/localization/share/localization/launch[0m
+[39mcopying launch/unit_tests/test_map.launch.xml -> /home/racecar/racecar_ws/src/localization/install/localization/share/localization/launch[0m
+[39mcreating /home/racecar/racecar_ws/src/localization/install/localization/share/localization/test_map[0m
+[39mcopying test_map/test_map.png -> /home/racecar/racecar_ws/src/localization/install/localization/share/localization/test_map[0m
+[39mcopying test_map/test_map.yaml -> /home/racecar/racecar_ws/src/localization/install/localization/share/localization/test_map[0m
+[39mrunning install_egg_info[0m
+[39mCopying build/localization/localization.egg-info to /home/racecar/racecar_ws/src/localization/install/localization/lib/python3.10/site-packages/localization-0.0.0-py3.10.egg-info[0m
+[39mrunning install_scripts[0m
+[39mInstalling motion_model_test script to /home/racecar/racecar_ws/src/localization/install/localization/lib/localization[0m
+[39mInstalling particle_filter script to /home/racecar/racecar_ws/src/localization/install/localization/lib/localization[0m
+[39mInstalling sensor_model_test script to /home/racecar/racecar_ws/src/localization/install/localization/lib/localization[0m
+[39mwriting list of installed files to '/home/racecar/racecar_ws/src/localization/build/localization/install.log'[0m

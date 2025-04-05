@@ -1,0 +1,678 @@
+[0.000000] (-) TimerEvent: {}
+[0.000401] (localization) JobQueued: {'identifier': 'localization', 'dependencies': OrderedDict()}
+[0.000583] (localization) JobStarted: {'identifier': 'localization'}
+[0.098359] (-) TimerEvent: {}
+[0.199927] (-) TimerEvent: {}
+[0.300801] (-) TimerEvent: {}
+[0.401236] (-) TimerEvent: {}
+[0.501877] (-) TimerEvent: {}
+[0.602481] (-) TimerEvent: {}
+[0.703011] (-) TimerEvent: {}
+[0.803534] (-) TimerEvent: {}
+[0.904268] (-) TimerEvent: {}
+[1.004780] (-) TimerEvent: {}
+[1.105374] (-) TimerEvent: {}
+[1.206183] (-) TimerEvent: {}
+[1.306690] (-) TimerEvent: {}
+[1.407195] (-) TimerEvent: {}
+[1.557685] (-) TimerEvent: {}
+[1.658184] (-) TimerEvent: {}
+[1.758681] (-) TimerEvent: {}
+[1.859170] (-) TimerEvent: {}
+[1.959790] (-) TimerEvent: {}
+[2.060371] (-) TimerEvent: {}
+[2.161121] (-) TimerEvent: {}
+[2.261856] (-) TimerEvent: {}
+[2.362327] (-) TimerEvent: {}
+[2.462856] (-) TimerEvent: {}
+[2.563621] (-) TimerEvent: {}
+[2.697670] (-) TimerEvent: {}
+[2.798233] (-) TimerEvent: {}
+[2.898991] (-) TimerEvent: {}
+[2.999792] (-) TimerEvent: {}
+[3.100409] (-) TimerEvent: {}
+[3.201475] (-) TimerEvent: {}
+[3.302101] (-) TimerEvent: {}
+[3.402926] (-) TimerEvent: {}
+[3.503590] (-) TimerEvent: {}
+[3.604258] (-) TimerEvent: {}
+[3.705534] (-) TimerEvent: {}
+[3.806668] (-) TimerEvent: {}
+[3.907647] (-) TimerEvent: {}
+[4.008363] (-) TimerEvent: {}
+[4.109040] (-) TimerEvent: {}
+[4.209527] (-) TimerEvent: {}
+[4.311550] (-) TimerEvent: {}
+[4.412459] (-) TimerEvent: {}
+[4.513454] (-) TimerEvent: {}
+[4.614499] (-) TimerEvent: {}
+[4.715224] (-) TimerEvent: {}
+[4.815695] (-) TimerEvent: {}
+[4.916247] (-) TimerEvent: {}
+[5.016961] (-) TimerEvent: {}
+[5.117801] (-) TimerEvent: {}
+[5.218189] (-) TimerEvent: {}
+[5.318650] (-) TimerEvent: {}
+[5.419119] (-) TimerEvent: {}
+[5.522839] (-) TimerEvent: {}
+[5.623915] (-) TimerEvent: {}
+[5.724354] (-) TimerEvent: {}
+[5.824760] (-) TimerEvent: {}
+[5.925309] (-) TimerEvent: {}
+[6.026053] (-) TimerEvent: {}
+[6.127201] (-) TimerEvent: {}
+[6.228070] (-) TimerEvent: {}
+[6.328528] (-) TimerEvent: {}
+[6.428979] (-) TimerEvent: {}
+[6.529441] (-) TimerEvent: {}
+[6.630022] (-) TimerEvent: {}
+[6.730548] (-) TimerEvent: {}
+[6.830963] (-) TimerEvent: {}
+[6.931392] (-) TimerEvent: {}
+[7.031809] (-) TimerEvent: {}
+[7.132287] (-) TimerEvent: {}
+[7.232989] (-) TimerEvent: {}
+[7.333677] (-) TimerEvent: {}
+[7.434689] (-) TimerEvent: {}
+[7.535790] (-) TimerEvent: {}
+[7.636631] (-) TimerEvent: {}
+[7.737561] (-) TimerEvent: {}
+[7.838794] (-) TimerEvent: {}
+[7.939378] (-) TimerEvent: {}
+[8.039928] (-) TimerEvent: {}
+[8.147355] (-) TimerEvent: {}
+[8.248387] (-) TimerEvent: {}
+[8.349177] (-) TimerEvent: {}
+[8.449949] (-) TimerEvent: {}
+[8.551123] (-) TimerEvent: {}
+[8.651767] (-) TimerEvent: {}
+[8.752337] (-) TimerEvent: {}
+[8.853203] (-) TimerEvent: {}
+[8.953972] (-) TimerEvent: {}
+[9.054457] (-) TimerEvent: {}
+[9.155122] (-) TimerEvent: {}
+[9.255677] (-) TimerEvent: {}
+[9.356395] (-) TimerEvent: {}
+[9.457036] (-) TimerEvent: {}
+[9.557905] (-) TimerEvent: {}
+[9.658487] (-) TimerEvent: {}
+[9.759475] (-) TimerEvent: {}
+[9.860136] (-) TimerEvent: {}
+[9.961075] (-) TimerEvent: {}
+[10.061669] (-) TimerEvent: {}
+[10.162484] (-) TimerEvent: {}
+[10.263449] (-) TimerEvent: {}
+[10.364382] (-) TimerEvent: {}
+[10.465274] (-) TimerEvent: {}
+[10.566437] (-) TimerEvent: {}
+[10.667087] (-) TimerEvent: {}
+[10.767828] (-) TimerEvent: {}
+[10.882763] (-) TimerEvent: {}
+[10.983572] (-) TimerEvent: {}
+[11.084201] (-) TimerEvent: {}
+[11.184836] (-) TimerEvent: {}
+[11.285386] (-) TimerEvent: {}
+[11.386059] (-) TimerEvent: {}
+[11.486684] (-) TimerEvent: {}
+[11.587317] (-) TimerEvent: {}
+[11.687980] (-) TimerEvent: {}
+[11.788474] (-) TimerEvent: {}
+[11.889132] (-) TimerEvent: {}
+[11.990498] (-) TimerEvent: {}
+[12.091518] (-) TimerEvent: {}
+[12.192453] (-) TimerEvent: {}
+[12.293440] (-) TimerEvent: {}
+[12.394743] (-) TimerEvent: {}
+[12.495555] (-) TimerEvent: {}
+[12.596283] (-) TimerEvent: {}
+[12.696984] (-) TimerEvent: {}
+[12.797803] (-) TimerEvent: {}
+[12.898302] (-) TimerEvent: {}
+[12.999056] (-) TimerEvent: {}
+[13.099825] (-) TimerEvent: {}
+[13.200433] (-) TimerEvent: {}
+[13.301166] (-) TimerEvent: {}
+[13.401924] (-) TimerEvent: {}
+[13.502699] (-) TimerEvent: {}
+[13.605268] (-) TimerEvent: {}
+[13.705736] (-) TimerEvent: {}
+[13.806297] (-) TimerEvent: {}
+[13.906897] (-) TimerEvent: {}
+[14.007543] (-) TimerEvent: {}
+[14.108340] (-) TimerEvent: {}
+[14.209281] (-) TimerEvent: {}
+[14.309965] (-) TimerEvent: {}
+[14.410528] (-) TimerEvent: {}
+[14.511063] (-) TimerEvent: {}
+[14.611858] (-) TimerEvent: {}
+[14.712958] (-) TimerEvent: {}
+[14.813371] (-) TimerEvent: {}
+[14.913845] (-) TimerEvent: {}
+[15.014306] (-) TimerEvent: {}
+[15.114755] (-) TimerEvent: {}
+[15.215436] (-) TimerEvent: {}
+[15.315966] (-) TimerEvent: {}
+[15.416526] (-) TimerEvent: {}
+[15.517274] (-) TimerEvent: {}
+[15.618065] (-) TimerEvent: {}
+[15.718613] (-) TimerEvent: {}
+[15.819384] (-) TimerEvent: {}
+[15.919980] (-) TimerEvent: {}
+[16.020647] (-) TimerEvent: {}
+[16.121924] (-) TimerEvent: {}
+[16.223003] (-) TimerEvent: {}
+[16.325265] (-) TimerEvent: {}
+[16.426297] (-) TimerEvent: {}
+[16.527260] (-) TimerEvent: {}
+[16.628090] (-) TimerEvent: {}
+[16.728479] (-) TimerEvent: {}
+[16.828935] (-) TimerEvent: {}
+[16.929661] (-) TimerEvent: {}
+[17.030186] (-) TimerEvent: {}
+[17.130614] (-) TimerEvent: {}
+[17.231108] (-) TimerEvent: {}
+[17.331685] (-) TimerEvent: {}
+[17.432155] (-) TimerEvent: {}
+[17.532648] (-) TimerEvent: {}
+[17.633072] (-) TimerEvent: {}
+[17.733598] (-) TimerEvent: {}
+[17.834062] (-) TimerEvent: {}
+[17.934552] (-) TimerEvent: {}
+[18.035181] (-) TimerEvent: {}
+[18.135850] (-) TimerEvent: {}
+[18.236507] (-) TimerEvent: {}
+[18.336938] (-) TimerEvent: {}
+[18.437757] (-) TimerEvent: {}
+[18.538148] (-) TimerEvent: {}
+[18.638538] (-) TimerEvent: {}
+[18.739001] (-) TimerEvent: {}
+[18.840686] (-) TimerEvent: {}
+[18.941561] (-) TimerEvent: {}
+[19.052027] (-) TimerEvent: {}
+[19.152965] (-) TimerEvent: {}
+[19.253928] (-) TimerEvent: {}
+[19.354573] (-) TimerEvent: {}
+[19.455659] (-) TimerEvent: {}
+[19.556920] (-) TimerEvent: {}
+[19.658035] (-) TimerEvent: {}
+[19.758669] (-) TimerEvent: {}
+[19.859584] (-) TimerEvent: {}
+[19.961278] (-) TimerEvent: {}
+[20.061800] (-) TimerEvent: {}
+[20.162539] (-) TimerEvent: {}
+[20.263420] (-) TimerEvent: {}
+[20.364596] (-) TimerEvent: {}
+[20.465279] (-) TimerEvent: {}
+[20.566239] (-) TimerEvent: {}
+[20.667094] (-) TimerEvent: {}
+[20.768208] (-) TimerEvent: {}
+[20.869349] (-) TimerEvent: {}
+[20.970006] (-) TimerEvent: {}
+[21.071137] (-) TimerEvent: {}
+[21.171942] (-) TimerEvent: {}
+[21.272959] (-) TimerEvent: {}
+[21.373753] (-) TimerEvent: {}
+[21.474493] (-) TimerEvent: {}
+[21.575045] (-) TimerEvent: {}
+[21.675873] (-) TimerEvent: {}
+[21.776502] (-) TimerEvent: {}
+[21.876971] (-) TimerEvent: {}
+[21.977513] (-) TimerEvent: {}
+[22.078091] (-) TimerEvent: {}
+[22.178568] (-) TimerEvent: {}
+[22.279115] (-) TimerEvent: {}
+[22.379701] (-) TimerEvent: {}
+[22.480293] (-) TimerEvent: {}
+[22.581129] (-) TimerEvent: {}
+[22.682022] (-) TimerEvent: {}
+[22.783314] (-) TimerEvent: {}
+[22.884326] (-) TimerEvent: {}
+[22.985327] (-) TimerEvent: {}
+[23.086151] (-) TimerEvent: {}
+[23.187041] (-) TimerEvent: {}
+[23.287815] (-) TimerEvent: {}
+[23.388749] (-) TimerEvent: {}
+[23.489844] (-) TimerEvent: {}
+[23.591072] (-) TimerEvent: {}
+[23.691961] (-) TimerEvent: {}
+[23.793396] (-) TimerEvent: {}
+[23.894177] (-) TimerEvent: {}
+[23.995361] (-) TimerEvent: {}
+[24.096533] (-) TimerEvent: {}
+[24.197327] (-) TimerEvent: {}
+[24.298630] (-) TimerEvent: {}
+[24.399666] (-) TimerEvent: {}
+[24.517396] (-) TimerEvent: {}
+[24.618442] (-) TimerEvent: {}
+[24.719560] (-) TimerEvent: {}
+[24.820762] (-) TimerEvent: {}
+[24.921470] (-) TimerEvent: {}
+[25.022292] (-) TimerEvent: {}
+[25.123316] (-) TimerEvent: {}
+[25.224317] (-) TimerEvent: {}
+[25.325661] (-) TimerEvent: {}
+[25.427324] (-) TimerEvent: {}
+[25.528207] (-) TimerEvent: {}
+[25.629315] (-) TimerEvent: {}
+[25.730401] (-) TimerEvent: {}
+[25.869708] (-) TimerEvent: {}
+[25.970995] (-) TimerEvent: {}
+[26.072150] (-) TimerEvent: {}
+[26.173138] (-) TimerEvent: {}
+[26.274634] (-) TimerEvent: {}
+[26.375782] (-) TimerEvent: {}
+[26.477065] (-) TimerEvent: {}
+[26.577814] (-) TimerEvent: {}
+[26.679360] (-) TimerEvent: {}
+[26.780706] (-) TimerEvent: {}
+[26.881697] (-) TimerEvent: {}
+[26.982248] (-) TimerEvent: {}
+[27.083349] (-) TimerEvent: {}
+[27.234422] (-) TimerEvent: {}
+[27.335620] (-) TimerEvent: {}
+[27.436564] (-) TimerEvent: {}
+[27.537805] (-) TimerEvent: {}
+[27.638978] (-) TimerEvent: {}
+[27.739979] (-) TimerEvent: {}
+[27.840439] (-) TimerEvent: {}
+[27.941420] (-) TimerEvent: {}
+[28.042383] (-) TimerEvent: {}
+[28.143721] (-) TimerEvent: {}
+[28.244996] (-) TimerEvent: {}
+[28.346875] (-) TimerEvent: {}
+[28.448520] (-) TimerEvent: {}
+[28.552639] (-) TimerEvent: {}
+[28.653321] (-) TimerEvent: {}
+[28.754228] (-) TimerEvent: {}
+[28.855618] (-) TimerEvent: {}
+[28.957040] (-) TimerEvent: {}
+[29.058524] (-) TimerEvent: {}
+[29.159900] (-) TimerEvent: {}
+[29.261086] (-) TimerEvent: {}
+[29.362009] (-) TimerEvent: {}
+[29.462997] (-) TimerEvent: {}
+[29.563495] (-) TimerEvent: {}
+[29.664226] (-) TimerEvent: {}
+[29.765517] (-) TimerEvent: {}
+[29.866676] (-) TimerEvent: {}
+[29.967265] (-) TimerEvent: {}
+[30.067986] (-) TimerEvent: {}
+[30.169179] (-) TimerEvent: {}
+[30.270269] (-) TimerEvent: {}
+[30.371397] (-) TimerEvent: {}
+[30.373311] (localization) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', 'build/localization', 'build', '--build-base', '/home/racecar/racecar_ws/src/localization/build/localization/build', 'install', '--record', '/home/racecar/racecar_ws/src/localization/build/localization/install.log', '--install-scripts', '$base/lib/localization', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/racecar/racecar_ws/src/localization', 'env': {'PYTHONIOENCODING': 'utf-8', 'HOSTNAME': '0ce1d503fd61', 'SSH_AGENT_PID': '231', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/racecar/racecar_ws/install/vs_msgs/lib:/home/racecar/racecar_ws/install/safe_drive_msgs/lib:/home/racecar/racecar_ws/install/custom_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/racecar', 'OLDPWD': '/home/racecar/racecar_ws/src', 'ROS_PYTHON_VERSION': '3', 'COLCON_PREFIX_PATH': '/home/racecar/racecar_ws/install:/home/sim_ws/install', 'ROS_DISTRO': 'humble', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'LANG': 'en_US.UTF-8', 'SSH_AUTH_SOCK': '/tmp/ssh-XXXXXXFWoXyZ/agent.230', 'AMENT_PREFIX_PATH': '/home/sim_ws/install/racecar_simulator:/home/racecar/racecar_ws/install/wall_follower:/home/racecar/racecar_ws/install/vs_msgs:/home/racecar/racecar_ws/install/visual_servoing:/home/racecar/racecar_ws/install/test_package:/home/racecar/racecar_ws/install/safety_controller:/home/racecar/racecar_ws/install/safe_drive_msgs:/home/racecar/racecar_ws/install/ros_exercises:/home/racecar/racecar_ws/install/py_pubsub:/home/racecar/racecar_ws/install/custom_msgs:/opt/ros/humble', 'SIM_WS': '/home/sim_ws', 'PWD': '/home/racecar/racecar_ws/src/localization/build/localization', 'PYTHONPATH': '/home/racecar/racecar_ws/src/localization/build/localization/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/racecar/racecar_ws/src/localization/install/localization/lib/python3.10/site-packages:/home/racecar/racecar_ws/build/wall_follower:/home/racecar/racecar_ws/install/wall_follower/lib/python3.10/site-packages:/home/racecar/racecar_ws/install/vs_msgs/local/lib/python3.10/dist-packages:/home/racecar/racecar_ws/build/visual_servoing:/home/racecar/racecar_ws/install/visual_servoing/lib/python3.10/site-packages:/home/racecar/racecar_ws/build/test_package:/home/racecar/racecar_ws/install/test_package/lib/python3.10/site-packages:/home/racecar/racecar_ws/build/safety_controller:/home/racecar/racecar_ws/install/safety_controller/lib/python3.10/site-packages:/home/racecar/racecar_ws/install/safe_drive_msgs/local/lib/python3.10/dist-packages:/home/racecar/racecar_ws/build/ros_exercises:/home/racecar/racecar_ws/install/ros_exercises/lib/python3.10/site-packages:/home/racecar/racecar_ws/build/py_pubsub:/home/racecar/racecar_ws/install/py_pubsub/lib/python3.10/site-packages:/home/racecar/racecar_ws/install/custom_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'NO_VNC_VERSION': '1.4.0', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/sim_ws/install/racecar_simulator:/home/racecar/racecar_ws/install/vs_msgs:/home/racecar/racecar_ws/install/safe_drive_msgs:/home/racecar/racecar_ws/install/custom_msgs'}, 'shell': False}
+[30.471505] (-) TimerEvent: {}
+[30.571987] (-) TimerEvent: {}
+[30.672525] (-) TimerEvent: {}
+[30.773132] (-) TimerEvent: {}
+[30.873851] (-) TimerEvent: {}
+[30.974555] (-) TimerEvent: {}
+[31.075236] (-) TimerEvent: {}
+[31.176187] (-) TimerEvent: {}
+[31.324131] (-) TimerEvent: {}
+[31.424855] (-) TimerEvent: {}
+[31.526170] (-) TimerEvent: {}
+[31.626903] (-) TimerEvent: {}
+[31.727449] (-) TimerEvent: {}
+[31.828142] (-) TimerEvent: {}
+[31.928849] (-) TimerEvent: {}
+[32.029805] (-) TimerEvent: {}
+[32.130735] (-) TimerEvent: {}
+[32.232143] (-) TimerEvent: {}
+[32.333061] (-) TimerEvent: {}
+[32.433682] (-) TimerEvent: {}
+[32.534222] (-) TimerEvent: {}
+[32.634922] (-) TimerEvent: {}
+[32.735635] (-) TimerEvent: {}
+[32.836645] (-) TimerEvent: {}
+[32.937798] (-) TimerEvent: {}
+[33.038338] (-) TimerEvent: {}
+[33.139610] (-) TimerEvent: {}
+[33.240870] (-) TimerEvent: {}
+[33.341886] (-) TimerEvent: {}
+[33.442482] (-) TimerEvent: {}
+[33.543632] (-) TimerEvent: {}
+[33.644782] (-) TimerEvent: {}
+[33.746772] (-) TimerEvent: {}
+[33.847718] (-) TimerEvent: {}
+[33.948805] (-) TimerEvent: {}
+[34.059237] (-) TimerEvent: {}
+[34.160088] (-) TimerEvent: {}
+[34.261571] (-) TimerEvent: {}
+[34.362533] (-) TimerEvent: {}
+[34.463459] (-) TimerEvent: {}
+[34.564491] (-) TimerEvent: {}
+[34.665125] (-) TimerEvent: {}
+[34.766339] (-) TimerEvent: {}
+[34.867200] (-) TimerEvent: {}
+[34.968633] (-) TimerEvent: {}
+[35.069269] (-) TimerEvent: {}
+[35.170041] (-) TimerEvent: {}
+[35.271086] (-) TimerEvent: {}
+[35.414973] (-) TimerEvent: {}
+[35.515878] (-) TimerEvent: {}
+[35.616749] (-) TimerEvent: {}
+[35.717999] (-) TimerEvent: {}
+[35.819021] (-) TimerEvent: {}
+[35.919564] (-) TimerEvent: {}
+[36.020012] (-) TimerEvent: {}
+[36.120491] (-) TimerEvent: {}
+[36.220941] (-) TimerEvent: {}
+[36.321367] (-) TimerEvent: {}
+[36.422027] (-) TimerEvent: {}
+[36.522428] (-) TimerEvent: {}
+[36.622922] (-) TimerEvent: {}
+[36.723393] (-) TimerEvent: {}
+[36.823854] (-) TimerEvent: {}
+[36.924567] (-) TimerEvent: {}
+[37.025769] (-) TimerEvent: {}
+[37.126662] (-) TimerEvent: {}
+[37.228075] (-) TimerEvent: {}
+[37.329186] (-) TimerEvent: {}
+[37.430258] (-) TimerEvent: {}
+[37.531643] (-) TimerEvent: {}
+[37.632822] (-) TimerEvent: {}
+[37.733565] (-) TimerEvent: {}
+[37.834745] (-) TimerEvent: {}
+[37.936138] (-) TimerEvent: {}
+[38.037292] (-) TimerEvent: {}
+[38.144770] (-) TimerEvent: {}
+[38.250730] (-) TimerEvent: {}
+[38.351344] (-) TimerEvent: {}
+[38.452364] (-) TimerEvent: {}
+[38.553087] (-) TimerEvent: {}
+[38.654400] (-) TimerEvent: {}
+[38.755462] (-) TimerEvent: {}
+[38.856577] (-) TimerEvent: {}
+[38.957581] (-) TimerEvent: {}
+[39.058731] (-) TimerEvent: {}
+[39.159889] (-) TimerEvent: {}
+[39.261119] (-) TimerEvent: {}
+[39.362325] (-) TimerEvent: {}
+[39.508887] (-) TimerEvent: {}
+[39.610282] (-) TimerEvent: {}
+[39.710787] (-) TimerEvent: {}
+[39.811942] (-) TimerEvent: {}
+[39.913248] (-) TimerEvent: {}
+[40.014376] (-) TimerEvent: {}
+[40.115385] (-) TimerEvent: {}
+[40.217339] (-) TimerEvent: {}
+[40.318031] (-) TimerEvent: {}
+[40.418737] (-) TimerEvent: {}
+[40.519282] (-) TimerEvent: {}
+[40.619721] (-) TimerEvent: {}
+[40.720270] (-) TimerEvent: {}
+[40.820725] (-) TimerEvent: {}
+[40.921361] (-) TimerEvent: {}
+[41.022222] (-) TimerEvent: {}
+[41.122878] (-) TimerEvent: {}
+[41.223929] (-) TimerEvent: {}
+[41.324876] (-) TimerEvent: {}
+[41.425869] (-) TimerEvent: {}
+[41.526569] (-) TimerEvent: {}
+[41.627525] (-) TimerEvent: {}
+[41.728716] (-) TimerEvent: {}
+[41.829585] (-) TimerEvent: {}
+[41.930741] (-) TimerEvent: {}
+[42.031613] (-) TimerEvent: {}
+[42.133080] (-) TimerEvent: {}
+[42.234422] (-) TimerEvent: {}
+[42.335609] (-) TimerEvent: {}
+[42.436864] (-) TimerEvent: {}
+[42.538056] (-) TimerEvent: {}
+[42.639371] (-) TimerEvent: {}
+[42.740976] (-) TimerEvent: {}
+[42.842570] (-) TimerEvent: {}
+[42.943465] (-) TimerEvent: {}
+[43.044340] (-) TimerEvent: {}
+[43.145407] (-) TimerEvent: {}
+[43.246633] (-) TimerEvent: {}
+[43.347998] (-) TimerEvent: {}
+[43.448932] (-) TimerEvent: {}
+[43.592456] (-) TimerEvent: {}
+[43.693796] (-) TimerEvent: {}
+[43.795078] (-) TimerEvent: {}
+[43.896242] (-) TimerEvent: {}
+[43.997474] (-) TimerEvent: {}
+[44.098783] (-) TimerEvent: {}
+[44.199805] (-) TimerEvent: {}
+[44.301006] (-) TimerEvent: {}
+[44.401789] (-) TimerEvent: {}
+[44.503263] (-) TimerEvent: {}
+[44.604119] (-) TimerEvent: {}
+[44.705375] (-) TimerEvent: {}
+[44.806416] (-) TimerEvent: {}
+[44.907388] (-) TimerEvent: {}
+[45.008439] (-) TimerEvent: {}
+[45.109437] (-) TimerEvent: {}
+[45.210495] (-) TimerEvent: {}
+[45.311415] (-) TimerEvent: {}
+[45.412328] (-) TimerEvent: {}
+[45.513847] (-) TimerEvent: {}
+[45.615305] (-) TimerEvent: {}
+[45.716614] (-) TimerEvent: {}
+[45.817772] (-) TimerEvent: {}
+[45.918932] (-) TimerEvent: {}
+[46.019805] (-) TimerEvent: {}
+[46.120401] (-) TimerEvent: {}
+[46.221219] (-) TimerEvent: {}
+[46.322080] (-) TimerEvent: {}
+[46.423455] (-) TimerEvent: {}
+[46.524558] (-) TimerEvent: {}
+[46.625465] (-) TimerEvent: {}
+[46.726346] (-) TimerEvent: {}
+[46.827252] (-) TimerEvent: {}
+[46.928328] (-) TimerEvent: {}
+[47.029175] (-) TimerEvent: {}
+[47.130437] (-) TimerEvent: {}
+[47.231329] (-) TimerEvent: {}
+[47.332250] (-) TimerEvent: {}
+[47.433016] (-) TimerEvent: {}
+[47.533881] (-) TimerEvent: {}
+[47.634874] (-) TimerEvent: {}
+[47.735924] (-) TimerEvent: {}
+[47.836666] (-) TimerEvent: {}
+[47.937922] (-) TimerEvent: {}
+[48.039010] (-) TimerEvent: {}
+[48.139889] (-) TimerEvent: {}
+[48.241084] (-) TimerEvent: {}
+[48.341906] (-) TimerEvent: {}
+[48.443043] (-) TimerEvent: {}
+[48.544350] (-) TimerEvent: {}
+[48.645803] (-) TimerEvent: {}
+[48.746922] (-) TimerEvent: {}
+[48.847950] (-) TimerEvent: {}
+[48.949356] (-) TimerEvent: {}
+[49.050462] (-) TimerEvent: {}
+[49.151482] (-) TimerEvent: {}
+[49.252567] (-) TimerEvent: {}
+[49.353777] (-) TimerEvent: {}
+[49.454895] (-) TimerEvent: {}
+[49.556036] (-) TimerEvent: {}
+[49.657375] (-) TimerEvent: {}
+[49.758293] (-) TimerEvent: {}
+[49.859100] (-) TimerEvent: {}
+[49.960252] (-) TimerEvent: {}
+[50.061521] (-) TimerEvent: {}
+[50.162671] (-) TimerEvent: {}
+[50.263686] (-) TimerEvent: {}
+[50.414843] (-) TimerEvent: {}
+[50.515483] (-) TimerEvent: {}
+[50.616708] (-) TimerEvent: {}
+[50.717327] (-) TimerEvent: {}
+[50.817853] (-) TimerEvent: {}
+[50.918777] (-) TimerEvent: {}
+[51.019483] (-) TimerEvent: {}
+[51.120574] (-) TimerEvent: {}
+[51.182392] (localization) StderrLine: {'line': b"/usr/lib/python3/dist-packages/setuptools/dist.py:723: UserWarning: Usage of dash-separated 'script-dir' will not be supported in future versions. Please use the underscore name 'script_dir' instead\n"}
+[51.184589] (localization) StderrLine: {'line': b'  warnings.warn(\n'}
+[51.220745] (-) TimerEvent: {}
+[51.228492] (localization) StdoutLine: {'line': b'\x1b[39mrunning egg_info\x1b[0m\n'}
+[51.235666] (localization) StdoutLine: {'line': b'\x1b[39mcreating build/localization/localization.egg-info\x1b[0m\n'}
+[51.241220] (localization) StdoutLine: {'line': b'\x1b[39mwriting build/localization/localization.egg-info/PKG-INFO\x1b[0m\n'}
+[51.266262] (localization) StdoutLine: {'line': b'\x1b[39mwriting dependency_links to build/localization/localization.egg-info/dependency_links.txt\x1b[0m\n'}
+[51.281244] (localization) StdoutLine: {'line': b'\x1b[39mwriting entry points to build/localization/localization.egg-info/entry_points.txt\x1b[0m\n'}
+[51.295024] (localization) StdoutLine: {'line': b'\x1b[39mwriting requirements to build/localization/localization.egg-info/requires.txt\x1b[0m\n'}
+[51.299976] (localization) StdoutLine: {'line': b'\x1b[39mwriting top-level names to build/localization/localization.egg-info/top_level.txt\x1b[0m\n'}
+[51.311418] (localization) StdoutLine: {'line': b"\x1b[39mwriting manifest file 'build/localization/localization.egg-info/SOURCES.txt'\x1b[0m\n"}
+[51.320843] (-) TimerEvent: {}
+[51.421399] (-) TimerEvent: {}
+[51.485231] (localization) StdoutLine: {'line': b"\x1b[39mreading manifest file 'build/localization/localization.egg-info/SOURCES.txt'\x1b[0m\n"}
+[51.537952] (-) TimerEvent: {}
+[51.627272] (localization) StdoutLine: {'line': b"\x1b[39mwriting manifest file 'build/localization/localization.egg-info/SOURCES.txt'\x1b[0m\n"}
+[51.634911] (localization) StdoutLine: {'line': b'\x1b[39mrunning build\x1b[0m\n'}
+[51.636339] (localization) StdoutLine: {'line': b'\x1b[39mrunning build_py\x1b[0m\n'}
+[51.638072] (-) TimerEvent: {}
+[51.646468] (localization) StdoutLine: {'line': b'\x1b[39mcreating /home/racecar/racecar_ws/src/localization/build/localization/build\x1b[0m\n'}
+[51.649393] (localization) StdoutLine: {'line': b'\x1b[39mcreating /home/racecar/racecar_ws/src/localization/build/localization/build/lib.linux-x86_64-3.10\x1b[0m\n'}
+[51.653526] (localization) StdoutLine: {'line': b'\x1b[39mcreating /home/racecar/racecar_ws/src/localization/build/localization/build/lib.linux-x86_64-3.10/localization\x1b[0m\n'}
+[51.664892] (localization) StdoutLine: {'line': b'\x1b[39mcopying localization/motion_model.py -> /home/racecar/racecar_ws/src/localization/build/localization/build/lib.linux-x86_64-3.10/localization\x1b[0m\n'}
+[51.689857] (localization) StdoutLine: {'line': b'\x1b[39mcopying localization/particle_filter.py -> /home/racecar/racecar_ws/src/localization/build/localization/build/lib.linux-x86_64-3.10/localization\x1b[0m\n'}
+[51.737870] (localization) StdoutLine: {'line': b'\x1b[39mcopying localization/sensor_model.py -> /home/racecar/racecar_ws/src/localization/build/localization/build/lib.linux-x86_64-3.10/localization\x1b[0m\n'}
+[51.740121] (-) TimerEvent: {}
+[51.800162] (localization) StdoutLine: {'line': b'\x1b[39mcopying localization/__init__.py -> /home/racecar/racecar_ws/src/localization/build/localization/build/lib.linux-x86_64-3.10/localization\x1b[0m\n'}
+[51.840306] (-) TimerEvent: {}
+[51.855954] (localization) StdoutLine: {'line': b'\x1b[39mcreating /home/racecar/racecar_ws/src/localization/build/localization/build/lib.linux-x86_64-3.10/localization/test\x1b[0m\n'}
+[51.884141] (localization) StdoutLine: {'line': b'\x1b[39mcopying localization/test/motion_model_test.py -> /home/racecar/racecar_ws/src/localization/build/localization/build/lib.linux-x86_64-3.10/localization/test\x1b[0m\n'}
+[51.940387] (-) TimerEvent: {}
+[51.969259] (localization) StdoutLine: {'line': b'\x1b[39mcopying localization/test/sensor_model_test.py -> /home/racecar/racecar_ws/src/localization/build/localization/build/lib.linux-x86_64-3.10/localization/test\x1b[0m\n'}
+[52.037591] (localization) StdoutLine: {'line': b'\x1b[39mcopying localization/test/__init__.py -> /home/racecar/racecar_ws/src/localization/build/localization/build/lib.linux-x86_64-3.10/localization/test\x1b[0m\n'}
+[52.040498] (-) TimerEvent: {}
+[52.115871] (localization) StdoutLine: {'line': b'\x1b[39mrunning build_ext\x1b[0m\n'}
+[52.120916] (localization) StdoutLine: {'line': b"\x1b[39mbuilding 'scan_simulator_2d' extension\x1b[0m\n"}
+[52.127040] (localization) StdoutLine: {'line': b'\x1b[39mC compiler: x86_64-linux-gnu-gcc -Wno-unused-result -Wsign-compare -DNDEBUG -g -fwrapv -O2 -Wall -g -fstack-protector-strong -Wformat -Werror=format-security -g -fwrapv -O2 -g -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC\n'}
+[52.128452] (localization) StdoutLine: {'line': b'\x1b[0m\n'}
+[52.139042] (localization) StdoutLine: {'line': b'\x1b[39mcreating /home/racecar/racecar_ws/src/localization/build/localization/build/temp.linux-x86_64-3.10\x1b[0m\n'}
+[52.140643] (-) TimerEvent: {}
+[52.147380] (localization) StdoutLine: {'line': b'\x1b[39mcreating /home/racecar/racecar_ws/src/localization/build/localization/build/temp.linux-x86_64-3.10/localization\x1b[0m\n'}
+[52.155322] (localization) StdoutLine: {'line': b"\x1b[39mcompile options: '-I/home/sim_ws/install/racecar_simulator/include -I/home/racecar/racecar_ws/src/localization/install/localization/include -I/usr/include/python3.10 -c'\n"}
+[52.157091] (localization) StdoutLine: {'line': b"extra options: '-Wno-cpp -g -Wno-maybe-uninitialized'\x1b[0m\n"}
+[52.161923] (localization) StdoutLine: {'line': b'\x1b[39mx86_64-linux-gnu-gcc: localization/scan_simulator_2d.cpp\x1b[0m\n'}
+[52.240881] (-) TimerEvent: {}
+[52.341764] (-) TimerEvent: {}
+[52.442935] (-) TimerEvent: {}
+[52.544353] (-) TimerEvent: {}
+[52.645060] (-) TimerEvent: {}
+[52.746176] (-) TimerEvent: {}
+[52.846926] (-) TimerEvent: {}
+[52.948105] (-) TimerEvent: {}
+[53.048998] (-) TimerEvent: {}
+[53.150344] (-) TimerEvent: {}
+[53.251184] (-) TimerEvent: {}
+[53.352072] (-) TimerEvent: {}
+[53.452800] (-) TimerEvent: {}
+[53.554112] (-) TimerEvent: {}
+[53.655570] (-) TimerEvent: {}
+[53.756675] (-) TimerEvent: {}
+[53.857724] (-) TimerEvent: {}
+[53.958723] (-) TimerEvent: {}
+[54.059709] (-) TimerEvent: {}
+[54.160945] (-) TimerEvent: {}
+[54.262639] (-) TimerEvent: {}
+[54.363559] (-) TimerEvent: {}
+[54.464414] (-) TimerEvent: {}
+[54.565046] (-) TimerEvent: {}
+[54.665664] (-) TimerEvent: {}
+[54.691574] (localization) StdoutLine: {'line': b'\x1b[39mx86_64-linux-gnu-g++ -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -g -fwrapv -O2 -Wl,-Bsymbolic-functions -g -fwrapv -O2 -g -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 /home/racecar/racecar_ws/src/localization/build/localization/build/temp.linux-x86_64-3.10/localization/scan_simulator_2d.o -L/home/sim_ws/install/racecar_simulator/lib -lracecar_simulator -o /home/racecar/racecar_ws/src/localization/build/localization/build/lib.linux-x86_64-3.10/scan_simulator_2d.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[54.765785] (-) TimerEvent: {}
+[54.866578] (-) TimerEvent: {}
+[54.967192] (-) TimerEvent: {}
+[55.067829] (-) TimerEvent: {}
+[55.168981] (-) TimerEvent: {}
+[55.269684] (-) TimerEvent: {}
+[55.370518] (-) TimerEvent: {}
+[55.471656] (-) TimerEvent: {}
+[55.566949] (localization) StdoutLine: {'line': b'\x1b[39mrunning install\x1b[0m\n'}
+[55.568930] (localization) StdoutLine: {'line': b'\x1b[39mrunning install_lib\x1b[0m\n'}
+[55.571753] (-) TimerEvent: {}
+[55.602709] (localization) StdoutLine: {'line': b'\x1b[39mcreating /home/racecar/racecar_ws/src/localization/install/localization/lib/python3.10/site-packages/localization\x1b[0m\n'}
+[55.628096] (localization) StdoutLine: {'line': b'\x1b[39mcopying /home/racecar/racecar_ws/src/localization/build/localization/build/lib.linux-x86_64-3.10/localization/motion_model.py -> /home/racecar/racecar_ws/src/localization/install/localization/lib/python3.10/site-packages/localization\x1b[0m\n'}
+[55.671920] (-) TimerEvent: {}
+[55.730849] (localization) StdoutLine: {'line': b'\x1b[39mcopying /home/racecar/racecar_ws/src/localization/build/localization/build/lib.linux-x86_64-3.10/localization/particle_filter.py -> /home/racecar/racecar_ws/src/localization/install/localization/lib/python3.10/site-packages/localization\x1b[0m\n'}
+[55.772051] (-) TimerEvent: {}
+[55.811055] (localization) StdoutLine: {'line': b'\x1b[39mcopying /home/racecar/racecar_ws/src/localization/build/localization/build/lib.linux-x86_64-3.10/localization/sensor_model.py -> /home/racecar/racecar_ws/src/localization/install/localization/lib/python3.10/site-packages/localization\x1b[0m\n'}
+[55.872186] (-) TimerEvent: {}
+[55.878559] (localization) StdoutLine: {'line': b'\x1b[39mcreating /home/racecar/racecar_ws/src/localization/install/localization/lib/python3.10/site-packages/localization/test\x1b[0m\n'}
+[55.902413] (localization) StdoutLine: {'line': b'\x1b[39mcopying /home/racecar/racecar_ws/src/localization/build/localization/build/lib.linux-x86_64-3.10/localization/test/motion_model_test.py -> /home/racecar/racecar_ws/src/localization/install/localization/lib/python3.10/site-packages/localization/test\x1b[0m\n'}
+[55.941497] (localization) StdoutLine: {'line': b'\x1b[39mcopying /home/racecar/racecar_ws/src/localization/build/localization/build/lib.linux-x86_64-3.10/localization/test/sensor_model_test.py -> /home/racecar/racecar_ws/src/localization/install/localization/lib/python3.10/site-packages/localization/test\x1b[0m\n'}
+[55.972452] (-) TimerEvent: {}
+[55.999342] (localization) StdoutLine: {'line': b'\x1b[39mcopying /home/racecar/racecar_ws/src/localization/build/localization/build/lib.linux-x86_64-3.10/localization/test/__init__.py -> /home/racecar/racecar_ws/src/localization/install/localization/lib/python3.10/site-packages/localization/test\x1b[0m\n'}
+[56.065846] (localization) StdoutLine: {'line': b'\x1b[39mcopying /home/racecar/racecar_ws/src/localization/build/localization/build/lib.linux-x86_64-3.10/localization/__init__.py -> /home/racecar/racecar_ws/src/localization/install/localization/lib/python3.10/site-packages/localization\x1b[0m\n'}
+[56.072549] (-) TimerEvent: {}
+[56.108316] (localization) StdoutLine: {'line': b'\x1b[39mcopying /home/racecar/racecar_ws/src/localization/build/localization/build/lib.linux-x86_64-3.10/scan_simulator_2d.cpython-310-x86_64-linux-gnu.so -> /home/racecar/racecar_ws/src/localization/install/localization/lib/python3.10/site-packages\x1b[0m\n'}
+[56.172693] (-) TimerEvent: {}
+[56.197266] (localization) StdoutLine: {'line': b'\x1b[39mbyte-compiling /home/racecar/racecar_ws/src/localization/install/localization/lib/python3.10/site-packages/localization/motion_model.py to motion_model.cpython-310.pyc\x1b[0m\n'}
+[56.267353] (localization) StdoutLine: {'line': b'\x1b[39mbyte-compiling /home/racecar/racecar_ws/src/localization/install/localization/lib/python3.10/site-packages/localization/particle_filter.py to particle_filter.cpython-310.pyc\x1b[0m\n'}
+[56.272828] (-) TimerEvent: {}
+[56.373602] (-) TimerEvent: {}
+[56.455616] (localization) StdoutLine: {'line': b'\x1b[39mbyte-compiling /home/racecar/racecar_ws/src/localization/install/localization/lib/python3.10/site-packages/localization/sensor_model.py to sensor_model.cpython-310.pyc\x1b[0m\n'}
+[56.473725] (-) TimerEvent: {}
+[56.574668] (-) TimerEvent: {}
+[56.587814] (localization) StdoutLine: {'line': b'\x1b[39mbyte-compiling /home/racecar/racecar_ws/src/localization/install/localization/lib/python3.10/site-packages/localization/test/motion_model_test.py to motion_model_test.cpython-310.pyc\x1b[0m\n'}
+[56.674843] (-) TimerEvent: {}
+[56.718171] (localization) StdoutLine: {'line': b'\x1b[39mbyte-compiling /home/racecar/racecar_ws/src/localization/install/localization/lib/python3.10/site-packages/localization/test/sensor_model_test.py to sensor_model_test.cpython-310.pyc\x1b[0m\n'}
+[56.775007] (-) TimerEvent: {}
+[56.792959] (localization) StdoutLine: {'line': b'\x1b[39mbyte-compiling /home/racecar/racecar_ws/src/localization/install/localization/lib/python3.10/site-packages/localization/test/__init__.py to __init__.cpython-310.pyc\x1b[0m\n'}
+[56.875234] (-) TimerEvent: {}
+[56.976604] (-) TimerEvent: {}
+[57.055793] (localization) StdoutLine: {'line': b'\x1b[39mbyte-compiling /home/racecar/racecar_ws/src/localization/install/localization/lib/python3.10/site-packages/localization/__init__.py to __init__.cpython-310.pyc\x1b[0m\n'}
+[57.076734] (-) TimerEvent: {}
+[57.164187] (localization) StdoutLine: {'line': b'\x1b[39mrunning install_data\x1b[0m\n'}
+[57.176924] (-) TimerEvent: {}
+[57.190398] (localization) StdoutLine: {'line': b'\x1b[39mcreating /home/racecar/racecar_ws/src/localization/install/localization/share/ament_index\x1b[0m\n'}
+[57.199078] (localization) StdoutLine: {'line': b'\x1b[39mcreating /home/racecar/racecar_ws/src/localization/install/localization/share/ament_index/resource_index\x1b[0m\n'}
+[57.211052] (localization) StdoutLine: {'line': b'\x1b[39mcreating /home/racecar/racecar_ws/src/localization/install/localization/share/ament_index/resource_index/packages\x1b[0m\n'}
+[57.253487] (localization) StdoutLine: {'line': b'\x1b[39mcopying resource/localization -> /home/racecar/racecar_ws/src/localization/install/localization/share/ament_index/resource_index/packages\x1b[0m\n'}
+[57.277367] (-) TimerEvent: {}
+[57.320274] (localization) StdoutLine: {'line': b'\x1b[39mcopying package.xml -> /home/racecar/racecar_ws/src/localization/install/localization/share/localization\x1b[0m\n'}
+[57.377712] (-) TimerEvent: {}
+[57.448923] (localization) StdoutLine: {'line': b'\x1b[39mcopying localization/params.yaml -> /home/racecar/racecar_ws/src/localization/install/localization/share/localization\x1b[0m\n'}
+[57.478031] (-) TimerEvent: {}
+[57.516407] (localization) StdoutLine: {'line': b'\x1b[39mcopying localization/test/test_params.yaml -> /home/racecar/racecar_ws/src/localization/install/localization/share/localization\x1b[0m\n'}
+[57.578208] (-) TimerEvent: {}
+[57.579930] (localization) StdoutLine: {'line': b'\x1b[39mcreating /home/racecar/racecar_ws/src/localization/install/localization/share/localization/launch\x1b[0m\n'}
+[57.606982] (localization) StdoutLine: {'line': b'\x1b[39mcopying launch/localize.launch.xml -> /home/racecar/racecar_ws/src/localization/install/localization/share/localization/launch\x1b[0m\n'}
+[57.678412] (-) TimerEvent: {}
+[57.709126] (localization) StdoutLine: {'line': b'\x1b[39mcopying launch/unit_tests/motion_model_test.launch.py -> /home/racecar/racecar_ws/src/localization/install/localization/share/localization/launch\x1b[0m\n'}
+[57.778621] (-) TimerEvent: {}
+[57.815089] (localization) StdoutLine: {'line': b'\x1b[39mcopying launch/unit_tests/sensor_model_test.launch.py -> /home/racecar/racecar_ws/src/localization/install/localization/share/localization/launch\x1b[0m\n'}
+[57.878897] (-) TimerEvent: {}
+[57.910101] (localization) StdoutLine: {'line': b'\x1b[39mcopying launch/unit_tests/test_map.launch.xml -> /home/racecar/racecar_ws/src/localization/install/localization/share/localization/launch\x1b[0m\n'}
+[57.979114] (-) TimerEvent: {}
+[58.009932] (localization) StdoutLine: {'line': b'\x1b[39mcreating /home/racecar/racecar_ws/src/localization/install/localization/share/localization/test_map\x1b[0m\n'}
+[58.052299] (localization) StdoutLine: {'line': b'\x1b[39mcopying test_map/test_map.png -> /home/racecar/racecar_ws/src/localization/install/localization/share/localization/test_map\x1b[0m\n'}
+[58.079271] (-) TimerEvent: {}
+[58.148241] (localization) StdoutLine: {'line': b'\x1b[39mcopying test_map/test_map.yaml -> /home/racecar/racecar_ws/src/localization/install/localization/share/localization/test_map\x1b[0m\n'}
+[58.179641] (-) TimerEvent: {}
+[58.203504] (localization) StdoutLine: {'line': b'\x1b[39mrunning install_egg_info\x1b[0m\n'}
+[58.279893] (-) TimerEvent: {}
+[58.309912] (localization) StdoutLine: {'line': b'\x1b[39mCopying build/localization/localization.egg-info to /home/racecar/racecar_ws/src/localization/install/localization/lib/python3.10/site-packages/localization-0.0.0-py3.10.egg-info\x1b[0m\n'}
+[58.380154] (-) TimerEvent: {}
+[58.481094] (-) TimerEvent: {}
+[58.582660] (-) TimerEvent: {}
+[58.683465] (-) TimerEvent: {}
+[58.784975] (-) TimerEvent: {}
+[58.886191] (-) TimerEvent: {}
+[58.946367] (localization) StdoutLine: {'line': b'\x1b[39mrunning install_scripts\x1b[0m\n'}
+[58.974584] (localization) StdoutLine: {'line': b'\x1b[39mInstalling motion_model_test script to /home/racecar/racecar_ws/src/localization/install/localization/lib/localization\x1b[0m\n'}
+[58.986317] (-) TimerEvent: {}
+[59.068817] (localization) StdoutLine: {'line': b'\x1b[39mInstalling particle_filter script to /home/racecar/racecar_ws/src/localization/install/localization/lib/localization\x1b[0m\n'}
+[59.086499] (-) TimerEvent: {}
+[59.106364] (localization) StdoutLine: {'line': b'\x1b[39mInstalling sensor_model_test script to /home/racecar/racecar_ws/src/localization/install/localization/lib/localization\x1b[0m\n'}
+[59.157049] (localization) StdoutLine: {'line': b"\x1b[39mwriting list of installed files to '/home/racecar/racecar_ws/src/localization/build/localization/install.log'\x1b[0m\n"}
+[59.186897] (-) TimerEvent: {}
+[59.287868] (-) TimerEvent: {}
+[59.328026] (localization) CommandEnded: {'returncode': 0}
+[59.388069] (-) TimerEvent: {}
+[59.489187] (-) TimerEvent: {}
+[59.590056] (-) TimerEvent: {}
+[59.690886] (-) TimerEvent: {}
+[59.791683] (-) TimerEvent: {}
+[59.892540] (-) TimerEvent: {}
+[59.993046] (-) TimerEvent: {}
+[60.102845] (-) TimerEvent: {}
+[60.204075] (-) TimerEvent: {}
+[60.305391] (-) TimerEvent: {}
+[60.406490] (-) TimerEvent: {}
+[60.424566] (localization) JobEnded: {'identifier': 'localization', 'rc': 0}
+[60.439689] (-) EventReactorShutdown: {}

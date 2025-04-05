@@ -192,16 +192,21 @@ class SensorModel:
 
         likelihoods = np.ones(N)
 
-        # For each beam, look up the beam probability and multiply.
-        for j in range(num_beams):
-            # Predicted measurements from each particle for beam j.
-            pred = scans[:, j]
-            pred_indices = np.array([int(round(z / scale)) for z in pred])
-            pred_indices = np.clip(pred_indices, 0, table_width - 1)
-            # Lookup: for each particle, use its predicted index (row) and the
-            # corresponding observed index (column j).
-            beam_likelihoods = self.sensor_model_table[pred_indices, obs_indices[j]]
-            likelihoods *= beam_likelihoods
+        # # For each beam, look up the beam probability and multiply.
+        # for j in range(num_beams):
+        #     # Predicted measurements from each particle for beam j.
+        #     pred = scans[:, j]
+        #     pred_indices = np.array([int(round(z / scale)) for z in pred])
+        #     pred_indices = np.clip(pred_indices, 0, table_width - 1)
+        #     # Lookup: for each particle, use its predicted index (row) and the
+        #     # corresponding observed index (column j).
+        #     beam_likelihoods = self.sensor_model_table[pred_indices, obs_indices[j]]
+        #     likelihoods *= beam_likelihoods
+
+        pred_indices = np.clip(np.round(scans / scale).astype(int), 0, table_width - 1)
+        beam_likelihoods = self.sensor_model_table[pred_indices, obs_indices]
+        likelihoods *= np.prod(beam_likelihoods, axis=1)
+
 
         return likelihoods
 
