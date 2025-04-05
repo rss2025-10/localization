@@ -187,24 +187,32 @@ class SensorModel:
         N, num_beams = scans.shape
 
         # Discretize the observed scan measurements.
-        obs_indices = np.array([int(round(z / scale)) for z in observation])
-        # self.node.get_logger().info(f" obs: {obs_indices}")
+        obs_indices = np.round(observation/scale).astype(int)
         obs_indices = np.clip(obs_indices, 0, table_width - 1)
 
         likelihoods = np.ones(N)
 
         # For each beam, look up the beam probability and multiply.
-        for j in range(num_beams):
-            # Predicted measurements from each particle for beam j.
-            pred = scans[:, j]
-            # self.node.get_logger().info(f"scans: {pred}")
-            pred_indices = np.array([int(round(z / scale)) for z in pred])
-            # self.node.get_logger().info(f"Pred indices: {pred_indices}")
-            pred_indices = np.clip(pred_indices, 0, table_width - 1)
-            # Lookup: for each particle, use its predicted index (row) and the
-            # corresponding observed index (column j).
-            beam_likelihoods = self.sensor_model_table[obs_indices[j], pred_indices]
-            likelihoods *= beam_likelihoods
+        # for j in range(num_beams):
+        #     # Predicted measurements from each particle for beam j.
+        #     pred = scans[:, j]
+        #     # self.node.get_logger().info(f"scans: {pred}")
+        #     pred_indices = np.array([int(round(z / scale)) for z in pred])
+        #     # self.node.get_logger().info(f"Pred indices: {pred_indices}")
+        #     pred_indices = np.clip(pred_indices, 0, table_width - 1)
+        #     # Lookup: for each particle, use its predicted index (row) and the
+        #     # corresponding observed index (column j).
+        #     beam_likelihoods = self.sensor_model_table[obs_indices[j], pred_indices]
+        #     likelihoods *= beam_likelihoods
+
+        pred_indices = np.clip(np.round(scans / scale).astype(int), 0, table_width - 1)
+        beam_likelihoods = self.sensor_model_table[pred_indices, obs_indices]
+        likelihoods *= np.prod(beam_likelihoods, axis=1)
+
+        # pred_idxs = np.round(scans/scale).astype(int)
+        # pred_idxs = np.clip(pred_idxs, 0, table_width - 1)
+        # beam_likelihoods = self.sensor_model_table[pred_idxs.T, obs_indices]
+        # likelihoods += beam_likelihoods
 
         return likelihoods
 

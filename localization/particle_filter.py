@@ -5,7 +5,10 @@ import threading
 
 import rclpy
 from rclpy.node import Node
+import tf2_ros
 
+
+from std_msgs.msg import Float64
 from nav_msgs.msg import Odometry
 from sensor_msgs.msg import LaserScan
 from geometry_msgs.msg import PoseWithCovarianceStamped, Quaternion
@@ -56,6 +59,11 @@ class ParticleFilter(Node):
             self.odom_callback,
             1)
 
+        self.error_pose_publisher = self.create_publisher(Float64, "/translation_error", 1)
+        self.error_rotation_publisher = self.create_publisher(Float64, "/rotation_error", 1)
+
+        self.error_buffer = tf2_ros.Buffer()
+        self.error_listener = tf2_ros.TransformListener(self.error_buffer, self)
         #  *Important Note #2:* You must respond to pose
         #     initialization requests sent to the /initialpose
         #     topic. You can test that this works properly using the
@@ -138,10 +146,11 @@ class ParticleFilter(Node):
             dt = (current_time - self.last_odom_time).nanoseconds * 1e-9
             self.last_odom_time = current_time
 
-            # Multiply the linear and angular velocities by dt.
-            dx = msg.twist.twist.linear.x * dt
-            dy = msg.twist.twist.linear.y * dt
-            dtheta = msg.twist.twist.angular.z * dt
+            noise = 0.0
+
+            dx = msg.twist.twist.linear.x * dt + np.random.normal(0, noise)
+            dy = msg.twist.twist.linear.y * dt + np.random.normal(0, noise)
+            dtheta = msg.twist.twist.angular.z * dt + np.random.normal(0, noise)
 
             theta = self.particles[:, 2]
             cos_theta = np.cos(theta)
@@ -236,8 +245,29 @@ class ParticleFilter(Node):
             z=quat[2],
             w=quat[3]
         )
-
         self.odom_pub.publish(odom_msg)
+
+        try:
+        # Get transform from /map to /base_link
+            transform = self.error_buffer.lookup_transform('map', 'base_link', rclpy.time.Time())
+            translation = transform.transform.translation
+            rotation = transform.transform.rotation
+            average_error = np.sqrt((avg_x - translation.x)**2 + (avg_y - translation.y)**2)
+            average_rot_error = np.sqrt((quat[0] - rotation.x)**2 + (quat[1] - rotation.y)**2 + (quat[2] - rotation.z)**2 + (quat[3] - rotation.w)**2)
+
+
+            msg = Float64()
+            msg.data = average_error
+            rot_msg = Float64()
+            rot_msg.data = average_rot_error
+            self.error_pose_publisher.publish(msg)
+            self.error_rotation_publisher.publish(rot_msg)
+
+
+        except (tf2_ros.TransformException, Exception) as e:
+            self.get_logger().warn(f"Could not get transform: {e}")
+            return None
+
 
     def publish_particle_markers(self):
         marker_array = MarkerArray()
