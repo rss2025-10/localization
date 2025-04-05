@@ -1,6 +1,7 @@
 # particle_filter.py
 
 import numpy as np
+import threading
 
 import rclpy
 from rclpy.node import Node
@@ -17,8 +18,8 @@ from tf_transformations import quaternion_from_euler, euler_from_quaternion
 import math
 
 
-VAR_POS = 0.25
-VAR_ANGLE = 0.05
+VAR_POS = .5
+VAR_ANGLE = .25
 
 class ParticleFilter(Node):
 
@@ -71,7 +72,7 @@ class ParticleFilter(Node):
             "/particle_markers",
             qos_profile=rclpy.qos.QoSProfile(depth=10, durability=rclpy.qos.DurabilityPolicy.TRANSIENT_LOCAL)
         )
-        
+
         #  *Important Note #3:* You must publish your pose estimate to
         #     the following topic. In particular, you must use the
         #     pose field of the Odometry message. You do not need to
@@ -98,13 +99,19 @@ class ParticleFilter(Node):
         self.num_particles = self.get_parameter('num_particles').get_parameter_value().integer_value
         self.particles = None
 
+        self.particle_thread_protection = threading.Lock()
+        self.count = 0
+
 
     def pose_callback(self, msg):
 
         x_0 = msg.pose.pose.position.x
         y_0 = msg.pose.pose.position.y
         q = msg.pose.pose.orientation
-        theta_0 = euler_from_quaternion([q.x, q.y, q.z, q.w])[2]
+        theta = euler_from_quaternion([q.x, q.y, q.z, q.w])
+        self.get_logger().info(f"theta{theta}")
+        theta_0 = theta[2]
+
 
         self.particles = np.empty((self.num_particles, 3))
         self.particles[:, 0] = np.random.normal(x_0, VAR_POS, self.num_particles)
@@ -115,69 +122,93 @@ class ParticleFilter(Node):
         self.publish_particle_markers()
 
     def odom_callback(self, msg):
-            
-        if self.particles is None:
-            return
 
-        # Get the current time.
-        current_time = self.get_clock().now()
-        
-        # If this is the first odom callback then just record time and exit.
-        if not hasattr(self, "last_odom_time"):
+        with self.particle_thread_protection:
+
+            if self.particles is None:
+                return
+
+            current_time = self.get_clock().now()
+
+            if not hasattr(self, "last_odom_time"):
+                self.last_odom_time = current_time
+                return
+
+            # Compute the time difference (dt) in seconds.
+            dt = (current_time - self.last_odom_time).nanoseconds * 1e-9
             self.last_odom_time = current_time
-            return
 
-        # Compute the time difference (dt) in seconds.
-        dt = (current_time - self.last_odom_time).nanoseconds * 1e-9
-        self.last_odom_time = current_time
+            # Multiply the linear and angular velocities by dt.
+            dx = msg.twist.twist.linear.x * dt
+            dy = msg.twist.twist.linear.y * dt
+            dtheta = msg.twist.twist.angular.z * dt
 
-        # Multiply the linear and angular velocities by dt.
-        dx = msg.twist.twist.linear.x * dt
-        dy = msg.twist.twist.linear.y * dt
-        dtheta = msg.twist.twist.angular.z * dt
-        
-        # Form the odometry delta vector.
-        odometry = np.array([dx, dy, dtheta])
-        self.particles = self.motion_model.evaluate(self.particles, odometry)
-        
-        self.publish_particle_markers()
-        self.publish_average_pose()
+            theta = self.particles[:, 2]
+            cos_theta = np.cos(theta)
+            sin_theta = np.sin(theta)
+
+            delta_x = dx * cos_theta - dy * sin_theta
+            delta_y = dx * sin_theta + dy * cos_theta
+
+            self.particles[:, 0] += delta_x
+            self.particles[:, 1] += delta_y
+            self.particles[:, 2] += dtheta
+
+            odometry = np.array([dx, dy, dtheta])
+            self.particles = self.motion_model.evaluate(self.particles, odometry)
+            self.publish_average_pose()
+            self.publish_particle_markers()
 
     def laser_callback(self, msg):
 
-        if self.particles is None or not self.sensor_model.map_set:
-            return
+        with self.particle_thread_protection:
 
-        obs = np.array(msg.ranges)
-        probs = self.sensor_model.evaluate(self.particles, obs)
+            if self.particles is None or not self.sensor_model.map_set:
+                self.get_logger().info(f"Not doing anything: no particles: {self.particles is None}, map set: {not self.sensor_model.map_set}")
+                return
+            else:
+                self.get_logger().info(f"Doing calcs")
 
-        if probs is None:
-            return
+            obs = np.array(msg.ranges)
+            probs = self.sensor_model.evaluate(self.particles, obs)
 
-        prob_sum = np.sum(probs)
-        if prob_sum == 0:
-            probs = np.ones(len(probs)) / len(probs)
-        else:
-            probs = probs / prob_sum
-            
-        idxs = np.random.choice(
-            np.arange(len(self.particles)),
-            size=len(self.particles),
-            replace=True,
-            p=probs)
+            if probs is None:
+                return
 
-        noise = np.column_stack((
-            np.random.normal(0, VAR_POS, self.num_particles),
-            np.random.normal(0, VAR_POS, self.num_particles),
-            np.random.normal(0, VAR_ANGLE, self.num_particles)
-        ))
-        self.particles += noise
-        self.particles = self.particles[idxs]
+            # self.get_logger().info(f"Probabilities {probs}")
 
-        
-        self.publish_average_pose()
-        self.publish_particle_markers()
-                
+            # probs = np.clip(probs, 1e-25, 1)
+            prob_sum = np.sum(probs)
+
+            if self.count == 0:
+                self.get_logger().info(f"particles: {self.particles}")
+                self.get_logger().info(f"pros: {probs}")
+                self.get_logger().info(f"probs sum: {prob_sum}")
+
+            if prob_sum <= 0:
+                self.get_logger().info(f"particles do not sum correctly")
+                probs = np.ones(len(probs)) / len(probs)
+            else:
+
+                probs = probs / prob_sum
+
+            if self.count == 0:
+                self.get_logger().info(f"probs after normalizing: {probs}")
+                self.get_logger().info(f"max val = {np.max(probs)}")
+
+            # self.get_logger().info(f"Probs: {probs}")
+            idxs = np.random.choice(
+                np.arange(len(self.particles)),
+                size=len(self.particles),
+                replace=True,
+                p=probs)
+
+            self.particles = np.take(self.particles, idxs, axis=0)
+
+            self.publish_average_pose()
+            self.count += 1
+            self.publish_particle_markers()
+
 
     def publish_average_pose(self):
 
@@ -198,6 +229,7 @@ class ParticleFilter(Node):
         odom_msg.pose.pose.position.y = avg_y
         odom_msg.pose.pose.position.z = 0.0
         quat = quaternion_from_euler(0, 0, avg_theta)
+
         odom_msg.pose.pose.orientation = Quaternion(
             x=quat[0],
             y=quat[1],

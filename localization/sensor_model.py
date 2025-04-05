@@ -25,6 +25,7 @@ class SensorModel:
         self.scan_theta_discretization = node.get_parameter(
             'scan_theta_discretization').get_parameter_value().double_value
         self.scan_field_of_view = node.get_parameter('scan_field_of_view').get_parameter_value().double_value
+        self.node = node
 
         ####################################
         # Sensor model mixture parameters.
@@ -79,28 +80,28 @@ class SensorModel:
         """
         if z < 0 or z > self.z_max:
             return 0.0
-        
+
         # Unnormalized Gaussian probability.
         sigma = self.sigma_hit
         coeff = 1.0 / (math.sqrt(2 * math.pi) * sigma)
         exponent = -0.5 * ((z - z_expected) / sigma) ** 2
         p_unnormalized = coeff * math.exp(exponent)
-        
+
         # Compute the integral over [0, z_max] (using the error function).
         sqrt2 = math.sqrt(2)
         # Compute the cumulative probability from 0 to z_max.
         cdf_upper = 0.5 * (1 + math.erf((self.z_max - z_expected) / (sigma * sqrt2)))
         cdf_lower = 0.5 * (1 + math.erf((0 - z_expected) / (sigma * sqrt2)))
         integral = cdf_upper - cdf_lower
-        
+
         # Avoid division by zero.
         if integral == 0:
             eta = 1.0
         else:
             eta = 1.0 / integral
-            
+
         return eta * p_unnormalized
-        
+
     def compute_short_probability(self, z, z_expected):
         """
         p_short: models unexpected short readings.
@@ -178,8 +179,7 @@ class SensorModel:
         if not self.map_set:
             return
 
-        scale = self.scale  # conversion from meters to table index (if scale==1, 1 m/bin)
-        z_max = self.z_max
+        scale = self.scale * self.resolution  # conversion from meters to table index (if scale==1, 1 m/bin)
         table_width = self.table_width
 
         # Obtain predicted ranges for each particle.
@@ -188,6 +188,7 @@ class SensorModel:
 
         # Discretize the observed scan measurements.
         obs_indices = np.array([int(round(z / scale)) for z in observation])
+        # self.node.get_logger().info(f" obs: {obs_indices}")
         obs_indices = np.clip(obs_indices, 0, table_width - 1)
 
         likelihoods = np.ones(N)
@@ -196,11 +197,13 @@ class SensorModel:
         for j in range(num_beams):
             # Predicted measurements from each particle for beam j.
             pred = scans[:, j]
+            # self.node.get_logger().info(f"scans: {pred}")
             pred_indices = np.array([int(round(z / scale)) for z in pred])
+            # self.node.get_logger().info(f"Pred indices: {pred_indices}")
             pred_indices = np.clip(pred_indices, 0, table_width - 1)
             # Lookup: for each particle, use its predicted index (row) and the
             # corresponding observed index (column j).
-            beam_likelihoods = self.sensor_model_table[pred_indices, obs_indices[j]]
+            beam_likelihoods = self.sensor_model_table[obs_indices[j], pred_indices]
             likelihoods *= beam_likelihoods
 
         return likelihoods
@@ -229,4 +232,4 @@ class SensorModel:
             0.5)  # cells with value < 0.5 are free
 
         self.map_set = True
-        print("Map initialized")
+        self.node.get_logger().info("Map initialized")
