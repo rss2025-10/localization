@@ -139,9 +139,9 @@ class ParticleFilter(Node):
             self.last_odom_time = current_time
 
             # Multiply the linear and angular velocities by dt.
-            dx = msg.twist.twist.linear.x * dt
-            dy = msg.twist.twist.linear.y * dt
-            dtheta = msg.twist.twist.angular.z * dt
+            dx = -msg.twist.twist.linear.x * dt
+            dy = -msg.twist.twist.linear.y * dt
+            dtheta = -msg.twist.twist.angular.z * dt
 
             theta = self.particles[:, 2]
             cos_theta = np.cos(theta)
@@ -166,8 +166,8 @@ class ParticleFilter(Node):
             if self.particles is None or not self.sensor_model.map_set:
                 self.get_logger().info(f"Not doing anything: no particles: {self.particles is None}, map set: {not self.sensor_model.map_set}")
                 return
-            else:
-                self.get_logger().info(f"Doing calcs")
+            # else:
+                # self.get_logger().info(f"Doing calcs")
 
             obs = np.array(msg.ranges)
             probs = self.sensor_model.evaluate(self.particles, obs)
@@ -181,8 +181,8 @@ class ParticleFilter(Node):
             prob_sum = np.sum(probs)
 
             if self.count == 0:
-                self.get_logger().info(f"particles: {self.particles}")
-                self.get_logger().info(f"pros: {probs}")
+                # self.get_logger().info(f"particles: {self.particles}")
+                # self.get_logger().info(f"pros: {probs}")
                 self.get_logger().info(f"probs sum: {prob_sum}")
 
             if prob_sum <= 0:

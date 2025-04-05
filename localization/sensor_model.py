@@ -186,26 +186,26 @@ class SensorModel:
         scans = self.scan_sim.scan(particles)  # shape: (N, num_beams)
         N, num_beams = scans.shape
 
+        # Downsample the observation to match num_beams by selecting evenly spaced indices
+        if len(observation) > num_beams:
+            downsample_indices = np.linspace(0, len(observation)-1, num_beams, dtype=int)
+            downsampled_observation = observation[downsample_indices]
+            # self.node.get_logger().info(f"Downsampled observation from {len(observation)} to {num_beams} beams")
+        else:
+            downsampled_observation = observation
+            if len(observation) < num_beams:
+                self.node.get_logger().warning(f"Observation has fewer beams ({len(observation)}) than expected ({num_beams})")
+
         # Discretize the observed scan measurements.
-        obs_indices = np.array([int(round(z / scale)) for z in observation])
-        # self.node.get_logger().info(f" obs: {obs_indices}")
+        obs_indices = np.array([int(round(z / scale)) for z in downsampled_observation])
         obs_indices = np.clip(obs_indices, 0, table_width - 1)
 
         likelihoods = np.ones(N)
 
         # For each beam, look up the beam probability and multiply.
-        for j in range(num_beams):
-            # Predicted measurements from each particle for beam j.
-            pred = scans[:, j]
-            # self.node.get_logger().info(f"scans: {pred}")
-            pred_indices = np.array([int(round(z / scale)) for z in pred])
-            # self.node.get_logger().info(f"Pred indices: {pred_indices}")
-            pred_indices = np.clip(pred_indices, 0, table_width - 1)
-            # Lookup: for each particle, use its predicted index (row) and the
-            # corresponding observed index (column j).
-            beam_likelihoods = self.sensor_model_table[obs_indices[j], pred_indices]
-            likelihoods *= beam_likelihoods
-
+        pred_indices = np.clip(np.round(scans / scale).astype(int), 0, table_width - 1)
+        beam_likelihoods = self.sensor_model_table[pred_indices, obs_indices]
+        likelihoods *= np.prod(beam_likelihoods, axis=1)
         return likelihoods
 
     def map_callback(self, map_msg):
