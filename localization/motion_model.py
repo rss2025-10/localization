@@ -1,4 +1,5 @@
 import numpy as np
+import math
 
 class MotionModel:
 
@@ -34,6 +35,7 @@ class MotionModel:
         alpha_1 = 0.2
         alpha_2 = 0.2
         alpha_3 = 0.4
+        alpha_4 = 0.07
 
         delta_rot_1 = np.arctan2(dy, dx)
         delta_trans = np.sqrt(dx**2 + dy**2)
