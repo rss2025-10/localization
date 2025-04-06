@@ -110,7 +110,7 @@ class ParticleFilter(Node):
         self.particles[:, 2] = np.random.normal(use_th, var_ang, self.num_particles)
 
         self.publish_average_pose()
-        self.pub_particle_marks()
+        #self.pub_particle_marks()
 
     def odom_callback(self, msg):
 
@@ -129,9 +129,9 @@ class ParticleFilter(Node):
             self.last_odom_time = current
 
             # Flip back to - vals if on car
-            dx = msg.twist.twist.linear.x * dt
-            dy = msg.twist.twist.linear.y * dt
-            dtheta = msg.twist.twist.angular.z * dt
+            dx = -msg.twist.twist.linear.x * dt
+            dy = -msg.twist.twist.linear.y * dt
+            dtheta = -msg.twist.twist.angular.z * dt
 
             # change frames? idk this seems to help
             # wait maybe this should go in precomputation for motion model???
@@ -144,10 +144,10 @@ class ParticleFilter(Node):
             self.particles[:, 2] += dtheta
 
 
-            odom = np.array([dx_new, dy_new, dtheta])
+            odom = np.array([dx, dy, dtheta])
             self.particles = self.motion_model.evaluate(self.particles, odom)
             self.publish_average_pose()
-            self.pub_particle_marks()
+            #self.pub_particle_marks()
 
     def laser_callback(self, msg):
 
@@ -190,7 +190,7 @@ class ParticleFilter(Node):
             self.particles = np.take(self.particles, idxs, axis=0)
 
             self.publish_average_pose()
-            self.pub_particle_marks()
+            #self.pub_particle_marks()
 
 
     def publish_average_pose(self):
