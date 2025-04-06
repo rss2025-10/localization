@@ -24,7 +24,7 @@ class ParticleFilter(Node):
     def __init__(self):
         super().__init__("particle_filter")
 
-        self.declare_parameter('particle_filter_frame', "default")
+        self.declare_parameter('particle_filter_frame', "pf_base_link")
         self.particle_filter_frame = self.get_parameter('particle_filter_frame').get_parameter_value().string_value
 
         #  *Important Note #1:* It is critical for your particle
@@ -128,16 +128,21 @@ class ParticleFilter(Node):
             dt = (current - self.last_odom_time).nanoseconds * 1e-9
             self.last_odom_time = current
 
-            # Flip back to + vals if in sim
-            dx = -msg.twist.twist.linear.x * dt
-            dy = -msg.twist.twist.linear.y * dt
-            dtheta = -msg.twist.twist.angular.z * dt
+            # Flip back to - vals if on car
+            dx = msg.twist.twist.linear.x * dt
+            dy = msg.twist.twist.linear.y * dt
+            dtheta = msg.twist.twist.angular.z * dt
 
             # change frames? idk this seems to help
             # wait maybe this should go in precomputation for motion model???
             theta = self.particles[:, 2]
             dx_new = dx * np.cos(theta) - dy * np.sin(theta)
             dy_new = dx * np.sin(theta) + dy * np.cos(theta)
+
+            self.particles[:, 0] += dx_new
+            self.particles[:, 1] += dy_new
+            self.particles[:, 2] += dtheta
+
 
             odom = np.array([dx_new, dy_new, dtheta])
             self.particles = self.motion_model.evaluate(self.particles, odom)
