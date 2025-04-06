@@ -32,10 +32,6 @@ class MotionModel:
         dtheta = odometry[2]
         n = particles.shape[0]
 
-        sin_sum = np.sum(np.sin(particles[:, 2]))
-        cos_sum = np.sum(np.cos(particles[:, 2]))
-        avg_theta = math.atan2(sin_sum, cos_sum)
-
         alpha_1 = 0.2
         alpha_2 = 0.2
         alpha_3 = 0.4
